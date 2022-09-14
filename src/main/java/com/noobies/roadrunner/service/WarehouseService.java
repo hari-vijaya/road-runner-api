@@ -28,12 +28,11 @@ public class WarehouseService {
 
         GeocodingResult[] resultWarehouse = GeocodingApi.reverseGeocode(context, latLngWarehouse).await();
         WarehouseEntity warehouseEntity = WarehouseEntity.builder()
-                .warehouseName(warehouseRequest.getWarehouseName())
+                .name(warehouseRequest.getName())
                 .contactNumber(warehouseRequest.getContactNumber())
                 .address(warehouseRequest.getAddress())
-                .personInCharge(warehouseRequest.getPersonInCharge())
+                .manager(warehouseRequest.getManager())
                 .warehouseLocation(commonUtils.getAddress(resultWarehouse))
-
                 .build();
         warehouseRepository.save(warehouseEntity);
     }

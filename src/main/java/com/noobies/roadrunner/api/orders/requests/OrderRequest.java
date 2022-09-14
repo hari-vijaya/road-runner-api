@@ -17,7 +17,7 @@ public class OrderRequest {
     private Integer capacity;
     private String customerId;
     private String materialType;
-    private String weight;
+    private Double weight;
     private Boolean isRouteAllocated;
     private String deliveryStatus;
     private String contactNo;
@@ -28,5 +28,6 @@ public class OrderRequest {
     private GeoJsonPoint origin;
     @JsonDeserialize(using = GeoJsonDeserializer.class)
     private GeoJsonPoint destination;
+    private Boolean isCombined;
 
 }

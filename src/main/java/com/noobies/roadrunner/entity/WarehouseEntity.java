@@ -15,9 +15,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class WarehouseEntity {
     @Id
     private String id;
-    private String warehouseName;
+    private String name;
     private String contactNumber;
     private String address;
-    private String personInCharge;
+    private String manager;
     private Address warehouseLocation;
 }

@@ -13,10 +13,10 @@ import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 @Data
 @Builder
 public class WarehouseRequest {
-    private String warehouseName;
+    private String name;
     private String contactNumber;
     private String address;
-    private String personInCharge;
+    private String manager;
     @JsonDeserialize(using = GeoJsonDeserializer.class)
     private GeoJsonPoint location;
 }

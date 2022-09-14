@@ -18,7 +18,7 @@ public class OrdersEntity {
     private Integer capacity;
     private String customerId;
     private String materialType;
-    private String weight;
+    private Double weight;
     private Boolean isRouteAllocated;
     private String deliveryStatus;
     private String contactNo;
@@ -28,4 +28,5 @@ public class OrdersEntity {
     private Address origin;
     private Address destination;
     private String assignedWarehouseId;
+    private Boolean isCombined;
 }

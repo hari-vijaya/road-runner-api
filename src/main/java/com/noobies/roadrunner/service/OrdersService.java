@@ -47,6 +47,7 @@ public class OrdersService {
                 .origin(commonUtils.getAddress(resultOrigin))
                 .destination(commonUtils.getAddress(resultDestination))
                 .assignedWarehouseId(commonUtils.findNearByWarehouse(originLatLng))
+                .isCombined(orderRequest.getIsCombined())
                 .build();
         ordersRepository.save(ordersEntity);
 

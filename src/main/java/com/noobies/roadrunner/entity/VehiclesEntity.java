@@ -37,7 +37,6 @@ public class VehiclesEntity {
     private String materialType;
     private Integer types;
     private Boolean isAtWarehouse;
-    @JsonDeserialize(using = GeoJsonDeserializer.class)
-    private GeoJsonPoint lastUpdatedWarehouseLocation;
-    private Boolean isAtService;
+    private String lastUpdatedWarehouseId;
+    private String status;
 }

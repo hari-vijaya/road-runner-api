@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -35,5 +36,13 @@ public class WarehouseService {
                 .warehouseLocation(commonUtils.getAddress(resultWarehouse))
                 .build();
         warehouseRepository.save(warehouseEntity);
+    }
+
+    public List<WarehouseEntity> getAllWarehouses() {
+        return warehouseRepository.findAll();
+    }
+
+    public WarehouseEntity getWarehouseById(String id) {
+        return warehouseRepository.findById(id).get();
     }
 }

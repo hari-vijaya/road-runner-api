@@ -24,7 +24,7 @@ public class DriverController {
     }
 
     @GetMapping("/getAll")
-    public List<DriverEntity> getDriversDetails() throws IOException, InterruptedException, ApiException {
+    public List<DriverEntity> getDriversDetails() {
         return driverService.getDriverDetails();
     }
 

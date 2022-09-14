@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -51,5 +52,13 @@ public class OrdersService {
                 .build();
         ordersRepository.save(ordersEntity);
 
+    }
+
+    public List<OrdersEntity> getAllOrders() {
+        return ordersRepository.findAll();
+    }
+
+    public OrdersEntity getOrderById(String id) {
+        return ordersRepository.findById(id).get();
     }
 }

@@ -1,29 +1,24 @@
-package com.noobies.roadrunner.entity;
+package com.noobies.roadrunner.api.vehicles.requests;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.noobies.roadrunner.config.GeoJsonDeserializer;
+import com.noobies.roadrunner.entity.FuelInfo;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
-@Document("vehicles")
-public class VehiclesEntity {
-    @Id
+public class VehicleRequest {
+
     private String id;
     @JsonDeserialize(using = GeoJsonDeserializer.class)
     private GeoJsonPoint currentLocation;
-    @Indexed(unique = true)
     private String vin;
-    @Indexed(unique = true)
     private String insurancePolicyNumber;
     private String make;
     private String model;
@@ -39,4 +34,6 @@ public class VehiclesEntity {
     private Boolean isAtWarehouse;
     private String lastUpdatedWarehouseId;
     private String status;
+    private String assignedDriverId;
+
 }

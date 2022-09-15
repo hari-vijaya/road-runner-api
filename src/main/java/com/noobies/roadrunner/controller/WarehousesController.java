@@ -28,7 +28,7 @@ public class WarehousesController {
         return warehouseService.getAllWarehouses();
     }
 
-    @GetMapping("/getDriverDetail")
+    @GetMapping("/getWarehouseDetail")
     public WarehouseEntity getWarehouseById(String id) {
         return warehouseService.getWarehouseById(id);
     }

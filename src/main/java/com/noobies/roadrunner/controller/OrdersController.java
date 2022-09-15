@@ -29,7 +29,7 @@ public class OrdersController {
         return ordersService.getAllOrders();
     }
 
-    @GetMapping("/getDriverDetail")
+    @GetMapping("/getOrderDetail")
     public OrdersEntity getOrderById(String id) {
         return ordersService.getOrderById(id);
     }

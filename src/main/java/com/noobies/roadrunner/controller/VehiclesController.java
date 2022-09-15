@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/vehicles")
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class VehiclesController {
 
     private final VehiclesService vehiclesService;
@@ -20,12 +21,12 @@ public class VehiclesController {
         vehiclesService.saveVehicle(vehicleRequest);
     }
 
-    @GetMapping("/get-all")
+    @GetMapping("/getAll")
     public List<VehiclesEntity> getAllVehicles() {
         return vehiclesService.getAllVehicles();
     }
 
-    @GetMapping
+    @GetMapping("/getVehicleDetail")
     public VehiclesEntity getVehicleById(@RequestParam String id) {
         return vehiclesService.getVehicleById(id);
     }
